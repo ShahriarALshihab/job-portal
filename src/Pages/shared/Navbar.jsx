@@ -15,17 +15,24 @@ const Navbar = () => {
   };
   const navLinks = (
     <>
-      <NavLink to="/">Home</NavLink>
+      
       <NavLink to="/">Jobs</NavLink>
     <NavLink to="/">My Applications</NavLink>
+    <NavLink to="/">Blog</NavLink>
+    <NavLink to="/">contact</NavLink>
       
     </>
   );
   return (
     <div className=" flex items-center justify-between">
-      <div className="flex items-center justify-center gap-2">
+         <div className="hidden lg:flex">
+      <Link to="/" className="flex items-center justify-center ">
+          <img src={logo} className="w-12" alt="" />
+          <a className="text-2xl text-gray-700 font-bold">Hire<span className="text-purple-600 italic">Co</span></a>
+        </Link>
+        </div>
         <div className="dropdown">
-          <div tabIndex={0} role="button" className=" lg:hidden">
+          <div tabIndex={0} role="button" className="lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 mt-2"
@@ -40,7 +47,8 @@ const Navbar = () => {
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
-          </div>
+        </div>
+     
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-slate-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
@@ -52,27 +60,29 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link to="/" className="flex items-center justify-center">
+      <div className="lg:hidden">
+      <Link to="/" className="flex items-center justify-center ">
           <img src={logo} className="w-12" alt="" />
           <a className="text-2xl text-gray-700 font-bold">Hire<span className="text-purple-600 italic">Co</span></a>
         </Link>
-      </div>
-      <div className=" hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+        </div>
+      
+      <div className=" hidden lg:flex gap-3 font-semibold">
+        {navLinks}
       </div>
       <div className=" gap-3 mr-5">
         {user ? (
           <>
+            <p>userProfile</p>
             <Link to="/" onClick={handleSignOut}>
               Sign out
             </Link>
           </>
         ) : (
           <>
-            <div className="underline text-blue-500">
-              <Link to="/sign-in">Sign in </Link>
+            <div>
+              <Link to="/sign-in" className="btn border border-gray-300">Sign in </Link>
 
-              <Link to="/register">/ Sign up</Link>
             </div>
           </>
         )}

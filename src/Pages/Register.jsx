@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 
 import AuthContext from "../context/AuthContext/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -9,7 +10,8 @@ const Register = () => {
   const { createUser } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
-    username: "",
+    firstname: "",
+    lastname:"",
     email: "",
     password: "",
   });
@@ -19,10 +21,13 @@ const Register = () => {
   const validate = () => {
     const newErrors = {};
 
-    if (!formData.username.trim()) {
-      newErrors.username = "Username is required!";
-    } else if (formData.username.length < 3) {
-      newErrors.username = "Username must be at least 3 characters long.";
+    if (!formData.firstname.trim()) {
+      newErrors.firstname = "Username is required!";
+    } else if (formData.firstname.length < 3) {
+      newErrors.firstname = "Username must be at least 3 characters long.";
+    }
+    if (!formData.lastname.trim()) {
+      newErrors.lastname = "name is required!"; 
     }
 
     if (!formData.email.trim()) {
@@ -68,36 +73,67 @@ const Register = () => {
     <div className="flex items-center justify-center min-h-screen ">
    
       <div className="card w-2/3  shadow-xl bg-base-100">
-        <div className="card-body w-2/3 mx-auto">
+        <div className="card-body w-3/3 mx-auto">
           <h2
             className="card-title text-center mx-auto
           7"
           >
             Join Now!
           </h2>
+          <div className="flex items-center justify-center mb-8">
+                   
+                    <button className="btn-outline border w-full py-3 rounded-lg font-bold flex items-center justify-center gap-2"><span className="text-2xl"><FcGoogle/></span>Sign up with Google</button>
+              
+                        </div>
+                        <div className="divider">OR</div> 
 
           <form onSubmit={handleSubmit}>
            
-              <div>
-                <div >
+              
+              <div >
+                <div className="flex gap-3">
+                  <div>
                   <label className="label">
-                    <span className="label-text">Username</span>
+                    <span className="label-text">First name</span>
                   </label>
                   <input
                     type="text"
-                    name="username"
-                    placeholder="Name"
-                    className="input input-bordered w-full"
+                    name="firstname"
+                
+                    className="input input-bordered"
+                    value={formData.firstname}
+                    onChange={handleChange}
+                    required
+                  />
+                   {errors.firstname && (
+                    <span className="text-red-500 text-sm">
+                      {errors.firstname}
+                    </span>
+                  )}
+                  </div>
+                  <div>
+                  <label className="label">
+                    <span className="label-text">Last name</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="lastname"
+                    
+                    className="input input-bordered"
                     value={formData.username}
                     onChange={handleChange}
                     required
                   />
-                  {errors.username && (
+                   {errors.lastname && (
                     <span className="text-red-500 text-sm">
-                      {errors.username}
+                      {errors.lastname}
                     </span>
                   )}
+                  </div>
                 </div>
+                  
+                 
+                
                 <div>
                   <label htmlFor="" className="label">
                     <span className="label-text">Email</span>

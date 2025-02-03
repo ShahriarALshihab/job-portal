@@ -104,7 +104,7 @@ const Login = () => {
           </div>
           <div className="flex justify-between items-end mt-4">
             <div className="flex"> <p className="checkbox"></p> <p>Remember me</p></div>
-                      <a href="#" className="text-sm text-blue-500">Forgot password</a>
+                      <a href="#" className="text-sm text-blue-500">Forgot password?</a>
                   </div>
                   <div className="form-control mt-6">
                       <button className="btn-outlined border bg-gray-800 text-white w-full rounded-md font-bold p-2 ">Sign in</button>
