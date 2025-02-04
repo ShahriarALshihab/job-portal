@@ -72,26 +72,28 @@ const Register = () => {
   return (
     <div className="flex items-center justify-center min-h-screen ">
    
-      <div className="card w-2/3  shadow-xl bg-base-100">
-        <div className="card-body w-3/3 mx-auto">
+      <div className="card w-full lg:w-3/12 md:w-5/6">
+        <div className="card-body w-full mx-auto">
           <h2
             className="card-title text-center mx-auto
-          7"
+          7 lg:ml-24 ml-24 text-blue-400"
           >
             Join Now!
           </h2>
-          <div className="flex items-center justify-center mb-8">
+          <div className="flex items-center justify-center mb-8 w-5/6">
                    
-                    <button className="btn-outline border w-full py-3 rounded-lg font-bold flex items-center justify-center gap-2"><span className="text-2xl"><FcGoogle/></span>Sign up with Google</button>
+                    <button className="btn-outline border border-gray-200 w-full py-3 rounded-lg lg:font-bold md:font-semibold flex items-center justify-center gap-2"><span className="text-2xl"><FcGoogle/></span>Sign up with Google</button>
               
                         </div>
-                        <div className="divider">OR</div> 
+          <div className="flex justify-center items-center">
+          <div className="divider  w-2/5 lg:mr-16">OR</div>
+          </div> 
 
           <form onSubmit={handleSubmit}>
            
               
               <div >
-                <div className="flex gap-3">
+                
                   <div>
                   <label className="label">
                     <span className="label-text">First name</span>
@@ -100,7 +102,7 @@ const Register = () => {
                     type="text"
                     name="firstname"
                 
-                    className="input input-bordered"
+                    className="input input-bordered w-5/6"
                     value={formData.firstname}
                     onChange={handleChange}
                     required
@@ -110,7 +112,8 @@ const Register = () => {
                       {errors.firstname}
                     </span>
                   )}
-                  </div>
+              </div>
+              
                   <div>
                   <label className="label">
                     <span className="label-text">Last name</span>
@@ -119,7 +122,7 @@ const Register = () => {
                     type="text"
                     name="lastname"
                     
-                    className="input input-bordered"
+                    className="input input-bordered w-5/6"
                     value={formData.username}
                     onChange={handleChange}
                     required
@@ -130,7 +133,7 @@ const Register = () => {
                     </span>
                   )}
                   </div>
-                </div>
+               
                   
                  
                 
@@ -142,7 +145,7 @@ const Register = () => {
                     type="email"
                     name="email"
                     placeholder="Enter your email"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-5/6"
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -159,7 +162,7 @@ const Register = () => {
                     type="password"
                     name="password"
                     placeholder="Enter password"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-5/6"
                     value={formData.password}
                     onChange={handleChange}
                     required
@@ -173,12 +176,12 @@ const Register = () => {
               </div>
             
 
-            <div className="form-control mt-5">
+            <div className="form-control mt-5 w-5/6">
               <button type="submit" className="btn bg-gray-900 text-white hover:text-black">
                 Sign up
               </button>
             </div>
-            <div className="flex justify-center items-center mt-4">
+            <div className="flex justify-center items-center mt-4 w-5/6 ">
               <a href="#" className="text-sm text-gray-400">
                 Already have an account?
                 <Link to="/sign-in" className="underline text-blue-500">

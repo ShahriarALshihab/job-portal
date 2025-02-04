@@ -15,16 +15,16 @@ const Navbar = () => {
   };
   const navLinks = (
     <>
-      
-      <NavLink to="/">Jobs</NavLink>
-    <NavLink to="/">My Applications</NavLink>
-    <NavLink to="/">Blog</NavLink>
-    <NavLink to="/">contact</NavLink>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/jobs">Jobs</NavLink>
+    <NavLink to="/myapplications">My Applications</NavLink>
+    <NavLink to="/blogs">Blog</NavLink>
+    <NavLink to="/contact">contact</NavLink>
       
     </>
   );
   return (
-    <div className=" flex items-center justify-between">
+    <div className=" flex items-center justify-between  py-2 md:py-5">
          <div className="hidden lg:flex">
       <Link to="/" className="flex items-center justify-center ">
           <img src={logo} className="w-12" alt="" />
@@ -81,7 +81,7 @@ const Navbar = () => {
         ) : (
           <>
             <div>
-              <Link to="/sign-in" className="btn border border-gray-300">Sign in </Link>
+              <Link to="/sign-in" className="btn border border-gray-200 bg-[#704597] text-white hover:text-black">Sign in </Link>
 
             </div>
           </>

@@ -4,9 +4,11 @@ import Register from "../Pages/Register";
 import Footer from "../Pages/shared/Footer";
 import Login from "../Pages/Login";
 
+
 const Mainlayout = () => {
   return (
-    <div className="max-w-7xl  mx-auto p-3">
+    <div className="w-full bg-gray-50">
+       <div className="w-11/12 mx-auto py-3">
       <Navbar></Navbar>
       <div className="min-h-screen">
       <Outlet>
@@ -15,6 +17,7 @@ const Mainlayout = () => {
       </Outlet>
          </div>
       <Footer></Footer>
+    </div>
     </div>
   );
 };

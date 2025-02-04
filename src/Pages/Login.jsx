@@ -65,12 +65,12 @@ const Login = () => {
   return (
   <>
     <div className="flex items-center justify-center min-h-screen ">
-      <div className="w-1/2">
+      <div className="w-2/3 md:w-2/6 lg:w-2/6">
         <small className="text-blue-600 flex justify-center items-center mb-5 ">Welcome back!</small>
        
         <div className="flex items-center justify-center mb-8">
          
-          <button className="btn-outline border w-full py-3 rounded-lg font-bold flex items-center justify-center gap-2"><span className="text-2xl"><FcGoogle/></span>Sign in with Google</button>
+          <button className="btn-outline border border-gray-300 w-full py-3 rounded-lg font-semibold lg:font-bold flex items-center justify-center gap-2"><span className="text-2xl"><FcGoogle/></span>Sign in with Google</button>
     
               </div>
               <div className="divider">OR</div> 
@@ -116,7 +116,7 @@ const Login = () => {
       </div>
    
     </div>
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center md:mt-[-50px] lg:mt-[-100px]">
        <img src="../../../public/login-img.svg" alt="" />
        </div> 
   </>
