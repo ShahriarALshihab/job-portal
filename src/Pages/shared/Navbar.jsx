@@ -28,7 +28,7 @@ const Navbar = () => {
          <div className="hidden lg:flex">
       <Link to="/" className="flex items-center justify-center ">
           <img src={logo} className="w-12" alt="" />
-          <a className="text-2xl text-gray-700 font-bold">Hire<span className="text-purple-600 italic">Co</span></a>
+          <h3 className="text-2xl lg:text-3xl text-gray-700 font-bold">Hire<span className="text-purple-600 italic">Co</span></h3>
         </Link>
         </div>
         <div className="dropdown">
