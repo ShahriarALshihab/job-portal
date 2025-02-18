@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import  logo  from "../../assets/logoIcon.png"; 
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 
+
 const Footer = () => {
   return (
     <div>
@@ -9,7 +10,7 @@ const Footer = () => {
         <nav>
         <Link to="/" className="flex items-center justify-center ">
           <img src={logo} className="w-12" alt="" />
-          <a className="text-2xl text-gray-700 font-bold">Hire<span className="text-purple-600 italic">Co</span></a>
+          <a className="text-2xl text-gray-700 font-bold">Hire<span className="text-[#704597] italic">Co</span></a>
           </Link>
           <div className="flex items-center justify-center gap-4 text-xl">
             <FaFacebook></FaFacebook>

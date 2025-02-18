@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 
 import AuthContext from "../context/AuthContext/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+
+import SocialLogin from "./shared/SocialLogin";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -80,9 +81,10 @@ const Register = () => {
           >
             Join Now!
           </h2>
+          <p className="text-lg font-semibold ml-24 my-1">Sign up With</p>
           <div className="flex items-center justify-center mb-8 w-5/6">
                    
-                    <button className="btn-outline border border-gray-200 w-full py-3 rounded-lg lg:font-bold md:font-semibold flex items-center justify-center gap-2"><span className="text-2xl"><FcGoogle/></span>Sign up with Google</button>
+                    <SocialLogin></SocialLogin>
               
                         </div>
           <div className="flex justify-center items-center">
