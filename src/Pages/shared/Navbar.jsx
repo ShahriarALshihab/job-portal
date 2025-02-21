@@ -13,12 +13,11 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY; // ✅ Always get the latest scrollY
-
+      const scrollY = window.scrollY; 
       if (scrollY > lastScrollTop.current) {
-        setIsVisible(false); // ✅ Hide navbar when scrolling down
+        setIsVisible(false);
       } else if (scrollY < lastScrollTop.current) {
-        setIsVisible(true); // ✅ Show navbar when scrolling up
+        setIsVisible(true); 
       }
 
       lastScrollTop.current = scrollY <= 0 ? 0 : scrollY;
@@ -49,11 +48,11 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed top-0  w-11/12 h-[72px] flex items-center justify-between py-2 md:py-5 z-[999] ease-in-out bg-gray-50 shadow-md transition-transform duration-300 ${
-        isVisible ? "translate-y-0 backdrop-blur-lg bg-white/30" : "-translate-y-20"
+      className={`fixed top-0  w-11/12 h-[60px] flex items-center justify-between py-2 md:py-5 z-[999] ease-in-out  shadow-sm  ${
+        isVisible ? " backdrop-blur-lg bg-white/50 visible" : "hidden"
       }`}
     >
-      {/* Logo */}
+     
       <div className="hidden lg:flex">
         <Link to="/" className="flex items-center justify-center">
           <img src={logo} className="w-12" alt="Logo" />
@@ -63,12 +62,12 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Mobile Menu */}
+
       <div className="dropdown">
         <div tabIndex={0} role="button" className="lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 mt-2"
+            className="h-8 w-8 m-2 border rounded-full"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -85,7 +84,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Mobile Logo */}
+
       <div className="lg:hidden">
         <Link to="/" className="flex items-center justify-center">
           <img src={logo} className="w-12" alt="Logo" />
@@ -95,10 +94,10 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Navbar Links */}
+
       <div className="hidden lg:flex gap-3 font-semibold">{navLinks}</div>
 
-      {/* Profile & Sign Out */}
+
       <div className="gap-3 mr-5">
         {user ? (
           <div className="dropdown dropdown-end">

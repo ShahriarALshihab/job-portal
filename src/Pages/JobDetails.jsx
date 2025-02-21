@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { FaMapMarkerAlt, FaMoneyBillWave, FaClock, FaBuilding } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const JobDetails = () => {
   
@@ -18,7 +19,7 @@ const JobDetails = () => {
   } = useLoaderData();
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+    <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-40">
      
       <div className="flex items-center justify-between border-b pb-4">
         <div className="flex items-center">
@@ -66,9 +67,11 @@ const JobDetails = () => {
       </div>
 
       <div className="mt-6 text-center">
-        <button className="px-6 py-3 bg-[#704597] text-white rounded-lg text-lg font-semibold hover:bg-[#42295a] transition duration-300">
-          Apply Now
-        </button>
+        <Link to={`/applyJob/${_id}`}>
+        <button className="px-4 py-2 bg-[#704597] text-white rounded-lg text-lg font-semibold hover:bg-[#42295a] transition duration-300">
+          Apply
+        </button></Link>
+       
       </div>
     </div>
   );
